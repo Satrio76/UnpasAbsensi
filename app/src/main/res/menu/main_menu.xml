@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/mainIcon"
+        android:icon="@drawable/icon_menu"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/mainLogout"
+                android:icon="@drawable/ic_exit"
+                android:title="Keluar"
+                app:showAsAction="ifRoom|withText"/>
+            <item
+                android:id="@+id/dFCreate"
+                android:visible="false"
+                android:title="Buat Diskusi"
+                app:showAsAction="ifRoom|withText"
+                android:icon="@drawable/ic_forum_blue"/>
+        </menu>
+    </item>
+</menu>

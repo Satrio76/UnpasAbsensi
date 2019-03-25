@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#335973</color>
+    <color name="colorPrimaryDark">#182336</color>
+    <color name="colorPrimaryYoung">#b71c1c</color>
+    <color name="colorAccent">#fcfcfc</color>
+    <color name="hejotaikuda">#BDB733</color>
+    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="lightgreyline">#ededed</color>
+    <color name="ungu">#7C4DFF</color>
+    <color name="kuning">#ffb300</color>
+    <color name="hijau">#58a45e</color>
+    <color name="pink">#ff4081</color>
+    <color name="headerBg">#F5F6F7</color>
+    <color name="stroke">#EFF0F1</color>
+    <color name="backgroundpage">#DDDEE0</color>
+    <color name="biru">#00887a</color>
+    <color name="backgroundActivity">#E9EBEE</color>
+    <color name="darkGrey">#5C5B59</color>
+
+    <color name="black_trans80">#33000000</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="indicator_unselected">#4D000000</color>
+    <color name="orange">#FF9800</color>
+    <color name="green">#4CAF50</color>
+    <color name="black">#000000</color>
+    <color name="bodas">#ffffff</color>
+</resources>

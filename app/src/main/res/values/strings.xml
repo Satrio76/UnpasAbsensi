@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UnpasAbsensi</string>
+    <string name="username">Nomor Induk</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="no_internet">Tidak Ada Koneksi Internet</string>
+    <string name="retry">Ulangi</string>
+    <string name="loading">Memuat Data …</string>
+</resources>
