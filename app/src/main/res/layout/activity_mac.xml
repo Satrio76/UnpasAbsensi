@@ -74,11 +74,12 @@
                     android:layout_height="wrap_content" />
 
                 <Button
+                    android:id="@+id/buttonSendMacBT"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:background="@drawable/button"
                     android:text="@string/update"
-                    android:textColor="@color/black"
-                    android:background="@drawable/button"/>
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

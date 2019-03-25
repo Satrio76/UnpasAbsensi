@@ -105,7 +105,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 initForum();
                 break;
             case R.id.MainCardViewMhsAbsen:
-                initMhsAbsen();
+                if(!mac_user.equals("")) {
+                    initMhsAbsen();
+                }else{
+                    Intent intentMacActivity = new Intent(this,MacActivity.class);
+                    intentMacActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intentMacActivity.putExtra("ID",id_user);
+                    intentMacActivity.putExtra("NOMOR_INDUK",nomor_induk);
+                    startActivity(intentMacActivity);
+                    finish();
+                }
                 break;
 
         }
@@ -252,7 +261,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //Jika mac kosong
-        if(!mac_user.equals("")){
             switch (pembeda) {
                 case "Mahasiswa":
                     intent = getIntent();
@@ -278,39 +286,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             textViewGelarNama.setText(nama);
             textViewGelarNama.setAllCaps(false);
             displaySuccess();
-        }else{
-            userMacBluetooth = "";
-            View subview = getLayoutInflater().inflate(R.layout.dialog_layout,null);
-            final EditText editTextMacBluetooth = subview.findViewById(R.id.userMacAddress);
-            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.todoDialogLight);
-            builder.setIcon(R.drawable.ic_info)
-                    .setTitle("Keamanan")
-                    .setMessage("Mac Address Bluetooth Anda")
-                    .setView(subview)
-                    .setPositiveButton("Kirim", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            if (editTextMacBluetooth.getText().toString().equals("")){
-                                Toast.makeText(MainActivity.this, "Masukan Mac Address Bluetooth", Toast.LENGTH_SHORT).show();
-                            }else{
-                                userMacBluetooth=editTextMacBluetooth.getText().toString();
-                                Log.e("DATA USER",id_user+" "+nomor_induk+" "+userMacBluetooth);
-                                displayLoading();
-                                GetTokenUnpas sendmac = new GetTokenUnpas(MainActivity.this,"Send_Mac");
-                                sendmac.sendMacBluetooth(id_user,nomor_induk,userMacBluetooth);
-                            }
-                        }
-                    })
-                    .setNeutralButton("Tidak", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {keHalamanLogin();}
-                    });
-            AlertDialog alertDialog = builder.create();
-            alertDialog.setCanceledOnTouchOutside(false);
-            alertDialog.show();
-            Button yes = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-            yes.setTextColor(Color.rgb(29,145,36));
-        }
+
     }
 
     private void ambilUserDiDatabase() {

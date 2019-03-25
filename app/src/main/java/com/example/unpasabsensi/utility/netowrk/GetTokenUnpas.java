@@ -13,6 +13,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.unpasabsensi.LoginActivity;
+import com.example.unpasabsensi.MacActivity;
 import com.example.unpasabsensi.MainActivity;
 import com.example.unpasabsensi.absensi.model.UserMhs;
 
@@ -163,9 +164,12 @@ public class GetTokenUnpas {
 //
 //                                        }
                                         Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                                        MainActivity mainActivity = (MainActivity) context;
-                                        mainActivity.displaySuccess();
-                                        mainActivity.initRunning();
+                                        MacActivity macActivity = (MacActivity) context;
+                                        Intent intentMain = new Intent(context,MainActivity.class);
+                                        intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        context.startActivity(intentMain);
+                                        macActivity.finish();
+
                                     }
                                     break;
                                 case "Check_Mac":
