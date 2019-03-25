@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".MacActivity"></activity>
+        <activity
+            android:name=".MacActivity" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
