@@ -135,7 +135,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void RunningPage() {
+        intenMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intenMain);
+        finish();
 //        new UrlUnpas();
 //        ApiAuthenticationClientJWT apiAuthenticationClientJWT = new ApiAuthenticationClientJWT(UrlUnpas.URL_LOGIN,token);
 //        AsyncTask<Void,Void,String> execute = new AmbilData(apiAuthenticationClientJWT);
