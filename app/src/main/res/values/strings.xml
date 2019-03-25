@@ -6,4 +6,8 @@
     <string name="no_internet">Tidak Ada Koneksi Internet</string>
     <string name="retry">Ulangi</string>
     <string name="loading">Memuat Data …</string>
+    <string name="perhatian">PERHATIAN!</string>
+    <string name="mac">MAC ADDRESS BLUETOOTH</string>
+    <string name="konten_perhatian">MAC ADDRESS Bluetooth belum terdaftar diserver, untuk melakukan absen diperlukan mac address bluetooth pada perangkat handphone anda  \n\nUntuk mengetahui mac address bluetooth anda: \n1. Nyalakan bluetooth \n2. Masuk ke menu SETTING \n3. Masuk ke menu TENTANG PONSEL \n4. Cari informasi ALAMAT BLUETOOTH \n5. Catat mac address tersebut \n6. Masukan mac address pada form dibawah \n7. Klik tombol UPDATE  \n\nAnda tidak dapat melakukan absen jika mac address yang anda masukan tidak sesuai.</string>
+    <string name="update">Update</string>
 </resources>
