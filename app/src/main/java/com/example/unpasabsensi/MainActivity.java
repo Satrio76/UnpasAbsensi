@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //CONNECTION SUCCESS
     private TextView textViewGelarNama, textViewDeskripsi;
     private TextView textViewGreeting;
-    private CardView cardViewPenugasan, cardViewKontrakMK, cardViewForum, cardViewMhsAbsen;
+    private CardView cardViewPenugasan, cardViewKontrakMK, cardViewForum, cardViewMhsAbsen, cardViewLapDosen;
     private DBHandler dbHandler;
     private String nim, nama, upload_date, status, password;
     private ConstraintLayout mhsAbsenConstraint;
@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cardViewKontrakMK = findViewById(R.id.MainCardViewMahasiswaKontrakMK);
         cardViewForum = findViewById(R.id.MainCardViewForum);
         cardViewMhsAbsen = findViewById(R.id.MainCardViewMhsAbsen);
+        cardViewLapDosen = findViewById(R.id.MainCardViewLapDosen);
         mhsAbsenConstraint = findViewById(R.id.mhsAbsenConstraint);
         textViewDeskripsi = findViewById(R.id.textViewDeskripsi);
         textViewGreeting = findViewById(R.id.textViewMhsAbsenGreeting);
@@ -256,14 +257,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case "Mahasiswa":
                     intent = getIntent();
                     //textViewGreeting.setText(macbluetooth);
+                    cardViewLapDosen.setVisibility(View.GONE);
                     cardViewKontrakMK.setVisibility(View.VISIBLE);
                     cardViewPenugasan.setVisibility(View.GONE);
                     mhsAbsenConstraint.setVisibility(View.VISIBLE);
                     textViewDeskripsi.setVisibility(View.GONE);
                     break;
                 case "Dosen":
+                    cardViewLapDosen.setVisibility(View.VISIBLE);
                     cardViewKontrakMK.setVisibility(View.GONE);
-                    cardViewPenugasan.setVisibility(View.VISIBLE);
+                    cardViewPenugasan.setVisibility(View.GONE);
                     mhsAbsenConstraint.setVisibility(View.GONE);
                     textViewDeskripsi.setVisibility(View.VISIBLE);
                     textViewDeskripsi.setText("Dosen");
