@@ -21,15 +21,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".MacActivity" android:configChanges="orientation|screenSize" />
+            android:windowSoftInputMode="adjustResize"
+            android:name=".MacActivity"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" android:configChanges="orientation|screenSize"/>
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".absensi.MahasiswaAbsensiActivity" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait" android:configChanges="orientation|screenSize">
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
