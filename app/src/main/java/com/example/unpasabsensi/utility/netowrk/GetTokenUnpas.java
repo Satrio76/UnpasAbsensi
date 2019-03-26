@@ -169,7 +169,6 @@ public class GetTokenUnpas {
                                         intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         context.startActivity(intentMain);
                                         macActivity.finish();
-
                                     }
                                     break;
                                 case "Check_Mac":

@@ -67,6 +67,7 @@ public class MahasiswaAbsensiActivity extends AppCompatActivity implements View.
     private CountDownTimer countd;
     private final int statusDiscover=1;
     private BluetoothAdapter bluetoothAdapter;
+    
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
