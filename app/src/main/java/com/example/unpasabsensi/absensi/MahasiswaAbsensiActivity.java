@@ -311,7 +311,7 @@ public class MahasiswaAbsensiActivity extends AppCompatActivity implements View.
         nim = Objects.requireNonNull(getIntent().getExtras()).getString("NIM");
         nama = getIntent().getExtras().getString("NAMA");
         dbHandler = new DBHandler(this);
-        dtf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        dtf = new SimpleDateFormat("yyyy-MM-dd/HH:mm:ss");
         buttonMhsAbsenStatus.setOnClickListener(this);
         buttonMhsAbsenStatus.setVisibility(View.GONE);
     }
@@ -383,24 +383,13 @@ public class MahasiswaAbsensiActivity extends AppCompatActivity implements View.
         Calendar datetimeKalender = Calendar.getInstance();
         Date date= datetimeKalender.getTime();
         String dateformat = dtf.format(date);
-//        int i = nama.indexOf(' ');
-//        String namaDepan = nama.substring(0,i);
         String sourceStr = nim;
         try {
-            String encrypted = AESUtil.encrypt(sourceStr);
+            String encrypted = AESUtil.encrypt(sourceStr+" "+dateformat);
             imageViewMhsAbsenQRImage.setImageBitmap(TextToImageEncode(encrypted));
             displaySuccess();
 
             imageViewMhsAbsenQRImage.setVisibility(View.VISIBLE);
-//            new CountDownTimer(60000, 1000) {
-//                public void onTick(long millisUntilFinished) {
-//                    textView8.setText("Masa Berlaku " + millisUntilFinished / 1000);
-//                }
-//                public void onFinish() {
-
-//                    textView8.setText("");
-//                }
-//            }.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
