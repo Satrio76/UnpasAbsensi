@@ -419,11 +419,13 @@ public class MahasiswaAbsensiActivity extends AppCompatActivity implements View.
         int bitMatrixWidth = bitMatrix.getWidth();
         int bitMatrixHeight = bitMatrix.getHeight();
         int[] pixels = new int[bitMatrixWidth * bitMatrixHeight];
+        int warnaQr = getResources().getColor(R.color.colorPrimary);
+        int warnaDasar = getResources().getColor(R.color.colorAccent);
         for (int y=0; y<bitMatrixHeight; y++){
             int offset = y * bitMatrixWidth;
             for (int x=0; x<bitMatrixWidth; x++){
                 pixels[offset + x] = bitMatrix.get(x,y) ?
-                        getResources().getColor(R.color.colorPrimaryDark):getResources().getColor(R.color.colorAccent);
+                       warnaQr : warnaDasar;
             }
         }
         Bitmap bitmap = Bitmap.createBitmap(bitMatrixWidth, bitMatrixHeight, Bitmap.Config.ARGB_4444);
