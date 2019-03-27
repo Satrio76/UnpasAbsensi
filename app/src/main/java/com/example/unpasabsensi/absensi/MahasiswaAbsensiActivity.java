@@ -231,11 +231,11 @@ public class MahasiswaAbsensiActivity extends AppCompatActivity implements View.
     }
 
     private void pengaktifanBluetooth(){
-        if(!bluetoothAdapter.enable()){
-
-        }else{
+        if(bluetoothAdapter.enable()){
             Toast.makeText(this, "BLUETOOTH SUDAN ON", Toast.LENGTH_SHORT).show();
         }
+
+
 
         Log.e("DISCOVER", "btnEnableDisable_Discoverable: Making device discoverable for 300 seconds.");
 
